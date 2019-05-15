@@ -1,0 +1,9 @@
+.Main {
+  width: 600px;
+  margin: 0 auto;
+  min-height: calc(100vh - 19px - 2rem * 1.5);
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+}

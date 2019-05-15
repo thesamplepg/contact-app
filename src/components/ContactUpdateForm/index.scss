@@ -1,0 +1,28 @@
+@import "vars";
+
+.UpdateItem {
+  margin: 1rem 0;
+  display: flex;
+
+  input {
+    flex: 1;
+    margin: 0 1px;
+    border: 1px solid tomato;
+    height: 35px;
+    font-family: $lato;
+    padding-left: 0.5rem;
+  }
+
+  .HighLighted {
+    box-shadow: 0 0 4px 1px tomato;
+  }
+
+  button {
+    flex-basis: 60px;
+    background-color: tomato;
+    color: #fff;
+    font-family: $lato;
+    font-weight: 900;
+    cursor: pointer;
+  }
+}

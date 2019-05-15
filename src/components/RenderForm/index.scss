@@ -1,0 +1,78 @@
+@import "vars";
+
+.AddContactForm {
+  width: 400px;
+  box-shadow: 0 0 4px 1px rgba(204, 204, 204, 0.61);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-family: $lato;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: top 0.5s;
+  background-color: #fff;
+  z-index: 100;
+
+  h2 {
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  label {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: grey;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  .ChoosedImage {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  input {
+    border: 1px solid #d3d3d3;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    font-family: $lato;
+  }
+
+  .HighlightedInput {
+    box-shadow: 0 0 4px 1px tomato;
+  }
+
+  .Error {
+    text-align: center;
+    color: tomato;
+    font-weight: 700;
+    margin: 0.5rem 0;
+  }
+
+  button {
+    padding: 0.5rem;
+    background-color: tomato;
+    color: #fff;
+    font-family: $lato;
+    font-weight: 900;
+    border-radius: 50px;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}

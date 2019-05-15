@@ -1,0 +1,56 @@
+@import "vars";
+
+.ContactInformation {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 4px 1px rgba(204, 204, 204, 0.76);
+  padding: 1rem;
+  margin: 0.5rem;
+
+  .ImageWrapper {
+    width: 45px;
+    height: 45px;
+    margin-right: 1rem;
+    overflow: hidden;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .Information {
+    font-family: $lato;
+    line-height: 1.5rem;
+
+    .Name {
+      color: tomato;
+      font-weight: 700;
+    }
+
+    .Phone {
+      font-weight: 600;
+    }
+
+    .Address {
+      opacity: 0.5;
+    }
+  }
+
+  .Options {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    align-items: flex-end;
+
+    button {
+      cursor: pointer;
+      margin: 0.5rem;
+      background-color: transparent;
+
+      svg {
+        color: tomato;
+      }
+    }
+  }
+}

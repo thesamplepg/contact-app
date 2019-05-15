@@ -1,0 +1,15 @@
+@import "vars";
+
+.ContactsList {
+  list-style: none;
+}
+
+.Error {
+  font-family: $lato;
+  text-align: center;
+  padding: 1rem;
+
+  svg {
+    margin-left: 1rem;
+  }
+}
