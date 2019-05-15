@@ -14,7 +14,7 @@ class Contact extends Component {
 
   static getDerivedStateFromProps = (props, state) => {
     if (!Object.keys(state.inputs).length) {
-      const inputs = { ...inputsConf };
+      const inputs = inputsConf;
       const { contact } = props;
 
       for (let key in inputs) {

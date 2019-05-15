@@ -27,10 +27,8 @@ class App extends Component {
   };
 
   render() {
-    let output = <Loader />;
-
     if (!this.props.loading) {
-      output = (
+      return (
         <React.Fragment>
           <main
             className={classes.Main}
@@ -48,9 +46,7 @@ class App extends Component {
       );
     }
 
-    console.log(classes);
-
-    return output;
+    return <Loader />;
   }
 }
 

@@ -10,8 +10,7 @@ class AddContactAddress extends Component {
   state = {
     inputs,
     errors: [],
-    image: null,
-    loading: false
+    image: null
   };
 
   createContact = (e, form) => {
@@ -21,33 +20,21 @@ class AddContactAddress extends Component {
     const data = new FormData(form.current);
 
     if (validate.call(this)) {
-      this.setState({ loading: true });
-
       for (let key in inputs) {
         data.append(key, inputs[key].value);
       }
 
-      fetch("https://contact-app-endpoints.herokuapp.com/api", {
-        method: "POST",
-        body: data
-      })
-        .then(res => res.json())
-        .then(data => {
-          this.props.createContactAddress(data.contact);
-          this.props.close();
-          this.cleanOut();
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      this.props.createContactAddress(data, () => {
+        this.props.close();
+        this.cleanOut();
+      });
     }
   };
 
   cleanOut = () => {
     this.setState({
       inputs: inputs,
-      errors: [],
-      loading: false
+      errors: []
     });
   };
 
@@ -78,7 +65,7 @@ class AddContactAddress extends Component {
         createContact={this.createContact}
         errors={this.state.errors}
         isOpen={this.props.isOpen}
-        loading={this.state.loading}
+        loading={this.props.loading}
         image={this.state.image}
         fileInputHandler={this.fileInputHandler}
       />
@@ -89,7 +76,8 @@ class AddContactAddress extends Component {
 export default connect(
   state => {
     return {
-      contacts: state.contacts
+      contacts: state.contacts,
+      loading: state.createLoading
     };
   },
   { createContactAddress }

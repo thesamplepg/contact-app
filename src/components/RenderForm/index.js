@@ -51,7 +51,7 @@ const RenderForm = ({
       />
       <label htmlFor="avatarInput">Choose Image (Optional)</label>
       {image ? (
-        <img className={classes.ChoosedImage} src={image} alt="choosed image" />
+        <img className={classes.ChoosedImage} src={image} alt="choosed_image" />
       ) : null}
       {inputsOutput}
       <p className={classes.Error}>

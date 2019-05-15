@@ -1,8 +1,9 @@
 import * as actionTypes from "../consts";
 
-const initialState = {
+export const initialState = {
   contacts: [],
-  loadgin: true
+  loadgin: true,
+  createLoading: false
 };
 
 export default (state = initialState, action) => {
@@ -26,7 +27,20 @@ export default (state = initialState, action) => {
     case actionTypes.CREATE_CONTACT_ADDRESS: {
       return {
         ...state,
-        contacts: [...state.contacts, action.payload.contact]
+        createLoading: true
+      };
+    }
+    case actionTypes.CREATE_CONTACT_ADDRESS_TRUE: {
+      return {
+        ...state,
+        contacts: [...state.contacts, action.payload.contact],
+        createLoading: false
+      };
+    }
+    case actionTypes.CREATE_CONTACT_ADDRESS_FALSE: {
+      return {
+        ...state,
+        createLoading: false
       };
     }
     case actionTypes.REMOVE_CONTACT_ADDRESS: {
