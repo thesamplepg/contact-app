@@ -15,7 +15,8 @@ const ContactUpdateForm = ({ inputs, change, errors, update }) => {
         type={input.type}
         placeholder={key}
         value={input.value}
-        onChange={e => change(e, key)}
+        id={key}
+        onChange={change}
         key={key}
       />
     );

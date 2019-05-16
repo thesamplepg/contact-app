@@ -33,7 +33,6 @@
     "html-webpack-plugin": "4.0.0-beta.5",
     "identity-obj-proxy": "3.0.0",
     "is-wsl": "^1.1.0",
-    "jest": "24.7.1",
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.7.1",
     "jest-watch-typeahead": "0.3.0",
@@ -85,9 +84,17 @@
     ]
   },
   "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-15": "^1.4.0",
+    "enzyme-adapter-react-16": "^1.13.0",
+    "enzyme-to-json": "^3.3.5",
     "fetch-mock": "^7.3.3",
+    "jest": "^24.7.1",
+    "jest-enzyme": "^7.0.2",
     "node-sass": "^4.12.0",
-    "redux-mock-store": "^1.5.3"
+    "react-test-renderer": "^16.8.6",
+    "redux-mock-store": "^1.5.3",
+    "typescript": "^3.4.5"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -134,6 +141,10 @@
       "jest-watch-typeahead/testname"
     ]
   },
+  "setupFiles": [
+    "<rootDir>/config/polyfills.js",
+    "<rootDir>/src/setupTests.js"
+  ],
   "babel": {
     "presets": [
       "react-app"

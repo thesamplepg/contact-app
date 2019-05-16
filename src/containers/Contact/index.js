@@ -3,9 +3,15 @@ import React, { Component } from "react";
 import ContactInformation from "components/ContactInformation";
 import ContactUpdateForm from "../../components/ContactUpdateForm";
 import { inputs as inputsConf } from "src/configs";
-import { validate } from "../utilits";
+import { validate, inputHandler } from "../utilits";
 
 class Contact extends Component {
+  constructor(props) {
+    super(props);
+
+    this.inputHandler = inputHandler.bind(this);
+  }
+
   state = {
     isUpdate: false,
     inputs: {},
@@ -37,28 +43,22 @@ class Contact extends Component {
     this.setState({ isUpdate: true });
   };
 
-  inputHandler = (e, key) => {
-    const inputs = { ...this.state.inputs };
-
-    inputs[key].value = e.target.value;
-
-    this.setState({ inputs: inputs });
-  };
-
   onUpdate = () => {
-    if (validate.call(this)) {
-      const { name, address, phone } = this.state.inputs;
+    const errors = validate(this.state.inputs);
 
-      const data = {
-        name: name.value,
-        address: address.value,
-        phone: phone.value
-      };
+    if (errors.length) return this.setState({ errors });
 
-      data._id = this.props.contact._id;
-      this.props.update(data);
-      this.setState({ isUpdate: false });
-    }
+    const { name, address, phone } = this.state.inputs;
+
+    const data = {
+      name: name.value,
+      address: address.value,
+      phone: phone.value
+    };
+
+    data._id = this.props.contact._id;
+    this.props.update(data);
+    this.setState({ isUpdate: false });
   };
 
   render() {

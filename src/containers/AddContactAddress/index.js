@@ -4,9 +4,15 @@ import { connect } from "react-redux";
 import RenderForm from "components/RenderForm";
 import { createContactAddress } from "actions/contacts";
 import { inputs } from "src/configs";
-import { validate } from "../utilits";
+import { validate, inputHandler } from "../utilits";
 
 class AddContactAddress extends Component {
+  constructor(props) {
+    super(props);
+
+    this.inputHandler = inputHandler.bind(this);
+  }
+
   state = {
     inputs,
     errors: [],
@@ -19,16 +25,18 @@ class AddContactAddress extends Component {
     const { inputs } = this.state;
     const data = new FormData(form.current);
 
-    if (validate.call(this)) {
-      for (let key in inputs) {
-        data.append(key, inputs[key].value);
-      }
+    const errors = validate(inputs);
 
-      this.props.createContactAddress(data, () => {
-        this.props.close();
-        this.cleanOut();
-      });
+    if (errors.length) return this.setState({ errors });
+
+    for (let key in inputs) {
+      data.append(key, inputs[key].value);
     }
+
+    this.props.createContactAddress(data, () => {
+      this.props.close();
+      this.cleanOut();
+    });
   };
 
   cleanOut = () => {
@@ -36,15 +44,6 @@ class AddContactAddress extends Component {
       inputs: inputs,
       errors: []
     });
-  };
-
-  changeHandler = e => {
-    const { id, value } = e.target;
-    const { inputs } = this.state;
-
-    inputs[id].value = value;
-
-    this.setState({ inputs });
   };
 
   fileInputHandler = e => {
