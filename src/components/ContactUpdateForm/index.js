@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./index.scss";
 
-const ContactUpdateForm = ({ inputs, change, errors, update }) => {
+const ContactUpdateForm = ({ inputs, change, errors, update }, props) => {
   const inputsOutput = [];
 
   for (let key in inputs) {
@@ -11,7 +11,7 @@ const ContactUpdateForm = ({ inputs, change, errors, update }) => {
 
     inputsOutput.push(
       <input
-        className={error === key ? classes.HighLighted : null}
+        className={error === key ? classes.HighLighted + " error" : null}
         type={input.type}
         placeholder={key}
         value={input.value}

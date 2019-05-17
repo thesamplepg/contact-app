@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import RenderForm from "components/RenderForm";
 import { createContactAddress } from "actions/contacts";
 import { inputs } from "src/configs";
-import { validate, inputHandler } from "../utilits";
+import { validate, inputHandler } from "../../utilits";
 
 class AddContactAddress extends Component {
   constructor(props) {

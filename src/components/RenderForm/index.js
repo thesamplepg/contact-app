@@ -22,7 +22,7 @@ const RenderForm = ({
     inputsOutput.push(
       <input
         id={key}
-        className={error ? classes.HighlightedInput : null}
+        className={error ? classes.HighlightedInput + " error" : null}
         onChange={changeHandler}
         key={key}
         value={input.value}

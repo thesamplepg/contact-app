@@ -1,5 +1,5 @@
 import { validate, inputHandler } from "./utilits";
-import { inputs } from "../configs";
+import { inputs } from "./configs";
 
 describe("utilits in container folder", () => {
   describe("form validate function", () => {

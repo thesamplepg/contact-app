@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import ContactInformation from "components/ContactInformation";
 import ContactUpdateForm from "../../components/ContactUpdateForm";
 import { inputs as inputsConf } from "src/configs";
-import { validate, inputHandler } from "../utilits";
+import { validate, inputHandler } from "../../utilits";
 
 class Contact extends Component {
   constructor(props) {

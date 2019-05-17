@@ -101,10 +101,12 @@
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
     ],
-    "setupFiles": [
-      "react-app-polyfill/jsdom"
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
     ],
-    "setupFilesAfterEnv": [],
+    "setupFiles": [
+      "<rootDir>/src/setupTests.js"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
@@ -142,7 +144,6 @@
     ]
   },
   "setupFiles": [
-    "<rootDir>/config/polyfills.js",
     "<rootDir>/src/setupTests.js"
   ],
   "babel": {

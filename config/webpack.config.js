@@ -275,7 +275,8 @@ module.exports = function(webpackEnv) {
         components: path.resolve("src", "components"),
         actions: path.resolve("src", "store", "actions"),
         vars: path.resolve("src", "vars.scss"),
-        src: path.resolve("src")
+        src: path.resolve("src"),
+        setup: path.resolve("src", "setupTests.js")
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

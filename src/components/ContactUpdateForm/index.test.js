@@ -1,30 +1,20 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import RenderForm from "./index";
+import ContactUpdateForm from "./index";
 import { inputs } from "../../configs";
-import ButtonLoader from "../UI/ButtonLoader";
 
 describe("RenderForm component", () => {
   const props = {
     inputs,
-    loading: false,
     errors: []
   };
 
-  const renderComponent = props => shallow(<RenderForm {...props} />);
+  const renderComponent = props => shallow(<ContactUpdateForm {...props} />);
 
   it("should render all inputs", () => {
     const component = renderComponent(props);
-    expect(component.find("input").length).toBe(4);
-  });
-
-  it("should render <ButtonLoader/> when loading is true", () => {
-    const nextProps = { ...props, loading: true };
-    const component = renderComponent(nextProps);
-    const buttonWrapper = component.find("button");
-
-    expect(buttonWrapper.contains(<ButtonLoader />)).toBeTruthy();
+    expect(component.find("input").length).toBe(3);
   });
 
   it("input[name] should have a class <error>", () => {
