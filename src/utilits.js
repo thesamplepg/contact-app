@@ -9,6 +9,7 @@ export function validate(inputs) {
   return errors;
 }
 
+//так можно?
 export function inputHandler(e) {
   const { inputs } = this.state;
   const { id, value } = e.target;

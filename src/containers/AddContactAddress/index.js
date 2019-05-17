@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import RenderForm from "components/RenderForm";
-import { createContactAddress } from "actions/contacts";
-import { inputs } from "src/configs";
+import RenderForm from "../../components/RenderForm";
+import { createContactAddress } from "../../store/actions/contacts";
+import { inputs } from "../../configs";
 import { validate, inputHandler } from "../../utilits";
 
 class AddContactAddress extends Component {
@@ -19,19 +19,25 @@ class AddContactAddress extends Component {
     image: null
   };
 
-  createContact = (e, form) => {
-    e.preventDefault();
-
+  appendValues = data => {
     const { inputs } = this.state;
-    const data = new FormData(form.current);
-
-    const errors = validate(inputs);
-
-    if (errors.length) return this.setState({ errors });
 
     for (let key in inputs) {
       data.append(key, inputs[key].value);
     }
+
+    return data;
+  };
+
+  createContact = (e, form) => {
+    e.preventDefault();
+    const formData = new FormData(form.current);
+
+    const errors = validate(this.state.inputs);
+
+    if (errors.length) return this.setState({ errors });
+
+    const data = this.appendValues(formData);
 
     this.props.createContactAddress(data, () => {
       this.props.close();
@@ -59,7 +65,7 @@ class AddContactAddress extends Component {
   render() {
     return (
       <RenderForm
-        changeHandler={this.changeHandler}
+        changeHandler={this.inputHandler}
         inputs={this.state.inputs}
         createContact={this.createContact}
         errors={this.state.errors}
@@ -71,6 +77,8 @@ class AddContactAddress extends Component {
     );
   }
 }
+
+export const TestComponent = AddContactAddress;
 
 export default connect(
   state => {

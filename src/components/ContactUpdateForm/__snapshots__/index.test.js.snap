@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactUpdateForm component render propertly 1`] = `
+<li
+  className="UpdateItem"
+>
+  <input
+    className={null}
+    id="name"
+    key="name"
+    placeholder="name"
+    type="text"
+    value=""
+  />
+  <input
+    className={null}
+    id="address"
+    key="address"
+    placeholder="address"
+    type="text"
+    value=""
+  />
+  <input
+    className={null}
+    id="phone"
+    key="phone"
+    placeholder="phone"
+    type="number"
+    value=""
+  />
+  <button>
+    update
+  </button>
+</li>
+`;

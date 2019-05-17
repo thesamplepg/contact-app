@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactList component render propertly 1`] = `
+<ul
+  className="ContactsList"
+>
+  <Contact
+    contact={1}
+    key="0"
+    remove={[Function]}
+    update={[Function]}
+  />
+  <Contact
+    contact={2}
+    key="1"
+    remove={[Function]}
+    update={[Function]}
+  />
+  <Contact
+    contact={3}
+    key="2"
+    remove={[Function]}
+    update={[Function]}
+  />
+</ul>
+`;

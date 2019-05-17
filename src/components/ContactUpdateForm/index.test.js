@@ -1,20 +1,24 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import ContactUpdateForm from "./index";
+import Component from "./index";
 import { inputs } from "../../configs";
 
-describe("RenderForm component", () => {
+describe("ContactUpdateForm component", () => {
   const props = {
     inputs,
     errors: []
   };
 
-  const renderComponent = props => shallow(<ContactUpdateForm {...props} />);
+  const renderComponent = props => shallow(<Component {...props} />);
+
+  it("render propertly", () => {
+    expect(renderComponent(props)).toMatchSnapshot();
+  });
 
   it("should render all inputs", () => {
     const component = renderComponent(props);
-    expect(component.find("input").length).toBe(3);
+    expect(component.find("input")).toHaveLength(3);
   });
 
   it("input[name] should have a class <error>", () => {

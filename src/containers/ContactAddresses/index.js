@@ -3,7 +3,10 @@ import { connect } from "react-redux";
 
 import classes from "./index.scss";
 import ContactsList from "../../components/ContactsList";
-import { removeContactAddress, updateContactAddress } from "actions/contacts";
+import {
+  removeContactAddress,
+  updateContactAddress
+} from "../../store/actions/contacts";
 
 class ContactAddresses extends Component {
   render() {

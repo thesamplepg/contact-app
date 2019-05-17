@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactUpdateForm component render propertly 1`] = `
+<li
+  className="ContactInformation"
+>
+  <div
+    className="ImageWrapper"
+  >
+    <img
+      alt="user"
+      src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png"
+    />
+  </div>
+  <figure
+    className="Information"
+  >
+    <p
+      className="Name"
+    >
+      name
+    </p>
+    <p
+      className="Phone"
+    >
+      phone
+    </p>
+    <p
+      className="Address"
+    >
+      allove
+    </p>
+  </figure>
+  <div
+    className="Options"
+  >
+    <button
+      className="DeleteButton"
+    >
+      <Icon
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f1f8",
+              "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z",
+            ],
+            "iconName": "trash",
+            "prefix": "fas",
+          }
+        }
+      />
+    </button>
+    <button
+      className="UpdateButton"
+    >
+      <Icon
+        icon={
+          Object {
+            "icon": Array [
+              512,
+              512,
+              Array [],
+              "f305",
+              "M497.94 74.17l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.75 18.75-49.15 0-67.91zm-246.8-20.53c-15.62-15.62-40.94-15.62-56.56 0L75.8 172.43c-6.25 6.25-6.25 16.38 0 22.62l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l101.82-101.82 22.63 22.62L93.95 290.03A327.038 327.038 0 0 0 .17 485.11l-.03.23c-1.7 15.28 11.21 28.2 26.49 26.51a327.02 327.02 0 0 0 195.34-93.8l196.79-196.79-82.77-82.77-84.85-84.85z",
+            ],
+            "iconName": "pen-alt",
+            "prefix": "fas",
+          }
+        }
+      />
+    </button>
+  </div>
+</li>
+`;

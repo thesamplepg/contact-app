@@ -2,7 +2,7 @@ import React from "react";
 import { faTrash, faPenAlt } from "@fortawesome/free-solid-svg-icons";
 
 import classes from "./index.scss";
-import Icon from "components/UI/Icon";
+import Icon from "../UI/Icon";
 
 const ContactInformation = props => {
   return (

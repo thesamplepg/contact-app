@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RenderForm component render propertly 1`] = `
+<form
+  className="AddContactForm"
+  encType="multipart/form-data"
+  style={
+    Object {
+      "top": "-100%",
+    }
+  }
+>
+  <h2>
+    New Contact Address
+  </h2>
+  <input
+    id="avatarInput"
+    multiple={false}
+    name="avatar"
+    type="file"
+  />
+  <label
+    htmlFor="avatarInput"
+  >
+    Choose Image (Optional)
+  </label>
+  <input
+    className={null}
+    id="name"
+    key="name"
+    placeholder="name"
+    type="text"
+    value=""
+  />
+  <input
+    className={null}
+    id="address"
+    key="address"
+    placeholder="address"
+    type="text"
+    value=""
+  />
+  <input
+    className={null}
+    id="phone"
+    key="phone"
+    placeholder="phone"
+    type="number"
+    value=""
+  />
+  <p
+    className="Error"
+  />
+  <button
+    className="Submit"
+    disabled={false}
+    onClick={[Function]}
+  >
+    New Contact
+  </button>
+</form>
+`;

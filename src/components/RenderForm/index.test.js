@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import RenderForm from "./index";
+import Component from "./index";
 import { inputs } from "../../configs";
 import ButtonLoader from "../UI/ButtonLoader";
 
@@ -12,11 +12,15 @@ describe("RenderForm component", () => {
     errors: []
   };
 
-  const renderComponent = props => shallow(<RenderForm {...props} />);
+  const renderComponent = props => shallow(<Component {...props} />);
+
+  it("render propertly", () => {
+    expect(renderComponent(props)).toMatchSnapshot();
+  });
 
   it("should render all inputs", () => {
     const component = renderComponent(props);
-    expect(component.find("input").length).toBe(4);
+    expect(component.find("input")).toHaveLength(4);
   });
 
   it("should render <ButtonLoader/> when loading is true", () => {

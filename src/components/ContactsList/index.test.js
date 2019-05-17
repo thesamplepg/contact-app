@@ -1,21 +1,34 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import ContactsList from "./index";
-import Contact from "../../containers/Contact";
+import Component from "./index";
 
-describe("RenderForm component", () => {
+describe("ContactList component", () => {
   const props = {
     contacts: [1, 2, 3]
   };
 
-  const renderComponent = props => shallow(<ContactsList {...props} />);
+  const renderComponent = props => shallow(<Component {...props} />);
+
+  it("render propertly", () => {
+    expect(renderComponent(props)).toMatchSnapshot();
+  });
 
   it(`should render ${props.contacts.length} <Contact />`, () => {
     const component = renderComponent(props);
 
-    const items = component.find("ul").children();
+    const items = component.find("Contact");
 
-    expect(true).toBeTruthy();
+    expect(items).toHaveLength(props.contacts.length);
+  });
+
+  it("should render h1 tag when no contacts", () => {
+    props.contacts = [];
+
+    const component = renderComponent(props);
+
+    const h1 = component.find("h1");
+
+    expect(h1.text()).toBe("No contacts found");
   });
 });
