@@ -22,6 +22,8 @@ class ContactAddresses extends Component {
   }
 }
 
+export const TestComponent = ContactAddresses;
+
 export default connect(
   state => ({
     contacts: state.contacts

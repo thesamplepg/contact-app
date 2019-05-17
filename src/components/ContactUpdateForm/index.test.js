@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 import Component from "./index";
 import { inputs } from "../../configs";
 
-describe("ContactUpdateForm component", () => {
+describe("ContactUpdateForm Component", () => {
   const props = {
     inputs,
     errors: []
@@ -16,18 +16,22 @@ describe("ContactUpdateForm component", () => {
     expect(renderComponent(props)).toMatchSnapshot();
   });
 
-  it("should render all inputs", () => {
-    const component = renderComponent(props);
-    expect(component.find("input")).toHaveLength(3);
+  describe("render inputs", () => {
+    it("should render all inputs", () => {
+      const component = renderComponent(props);
+      expect(component.find("input")).toHaveLength(3);
+    });
   });
 
-  it("input[name] should have a class <error>", () => {
-    const nextProps = { ...props, errors: ["name"] };
-    const component = renderComponent(nextProps);
+  describe("highlight input if error detected", () => {
+    it("input[name] should have a class <error>", () => {
+      const nextProps = { ...props, errors: ["name"] };
+      const component = renderComponent(nextProps);
 
-    const nameInput = component.find('input[id="name"]');
+      const nameInput = component.find('input[id="name"]');
 
-    expect(nameInput.hasClass("error")).toBeTruthy();
+      expect(nameInput.hasClass("error")).toBeTruthy();
+    });
   });
 
   describe("onChange handler", () => {

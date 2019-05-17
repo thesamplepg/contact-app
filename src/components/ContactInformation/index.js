@@ -26,7 +26,7 @@ const ContactInformation = props => {
         <button className={classes.DeleteButton} onClick={props.remove}>
           <Icon icon={faTrash} />
         </button>
-        <button className={classes.UpdateButton} onClick={props.startUpdating}>
+        <button className={classes.UpdateButton} onClick={props.showUpdateForm}>
           <Icon icon={faPenAlt} />
         </button>
       </div>

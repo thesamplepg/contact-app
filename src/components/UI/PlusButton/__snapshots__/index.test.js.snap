@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactList component render propertly 1`] = `
+exports[`PlusButton ui component render propertly 1`] = `
 <button
   className="PlusButton"
 >

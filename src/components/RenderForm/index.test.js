@@ -5,7 +5,7 @@ import Component from "./index";
 import { inputs } from "../../configs";
 import ButtonLoader from "../UI/ButtonLoader";
 
-describe("RenderForm component", () => {
+describe("RenderForm Component", () => {
   const props = {
     inputs,
     loading: false,

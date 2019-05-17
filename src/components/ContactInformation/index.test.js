@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 import Component from "./index";
 import classes from "./index.scss";
 
-describe("ContactUpdateForm component", () => {
+describe("ContactInformation Component", () => {
   const props = {
     name: "name",
     phone: "phone",
@@ -17,13 +17,15 @@ describe("ContactUpdateForm component", () => {
     expect(renderComponent(props)).toMatchSnapshot();
   });
 
-  it("should render all information about contact", () => {
-    const component = renderComponent(props);
+  describe("contact information", () => {
+    it("should render all information about contact correctly", () => {
+      const component = renderComponent(props);
 
-    const { name, address, phone } = props;
+      const { name, address, phone } = props;
 
-    expect(component.find(`.${classes.Name}`).text()).toBe(name);
-    expect(component.find(`.${classes.Phone}`).text()).toBe(phone);
-    expect(component.find(`.${classes.Address}`).text()).toBe(address);
+      expect(component.find(`.${classes.Name}`).text()).toBe(name);
+      expect(component.find(`.${classes.Phone}`).text()).toBe(phone);
+      expect(component.find(`.${classes.Address}`).text()).toBe(address);
+    });
   });
 });

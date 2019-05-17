@@ -39,10 +39,6 @@ class Contact extends Component {
     });
   }
 
-  startUpdating = e => {
-    this.setState({ isUpdate: true });
-  };
-
   onUpdate = () => {
     const errors = validate(this.state.inputs);
 
@@ -72,7 +68,7 @@ class Contact extends Component {
     ) : (
       <ContactInformation
         {...this.props.contact}
-        startUpdating={this.startUpdating}
+        showUpdateForm={() => this.setState({ isUpdate: true })}
         remove={this.props.remove}
       />
     );

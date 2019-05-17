@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RenderForm component render propertly 1`] = `
+exports[`RenderForm Component render propertly 1`] = `
 <form
   className="AddContactForm"
   encType="multipart/form-data"

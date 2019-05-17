@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 
 import Component from "./index";
 
-describe("ContactList component", () => {
+describe("ButtonLoader UI Component", () => {
   const renderComponent = () => shallow(<Component />);
 
   it("render propertly", () => {

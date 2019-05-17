@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactAddresses Component render propertly 1`] = `
+<section
+  className="ContactAddresses"
+>
+  <ContactsList
+    contacts={Array []}
+  />
+</section>
+`;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactUpdateForm component render propertly 1`] = `
+exports[`ContactUpdateForm Component render propertly 1`] = `
 <li
   className="UpdateItem"
 >
