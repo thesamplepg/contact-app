@@ -29,4 +29,24 @@ describe("ContactUpdateForm component", () => {
 
     expect(nameInput.hasClass("error")).toBeTruthy();
   });
+
+  describe("onChange handler", () => {
+    it("should call event when user entered smth", () => {
+      const change = jest.fn();
+
+      const nextProps = {
+        ...props,
+        change
+      };
+
+      const component = renderComponent(nextProps);
+      const inputs = component.find("input");
+
+      inputs.forEach(node =>
+        node.simulate("change", { target: { value: "asd" } })
+      );
+
+      expect(change).toHaveBeenCalledTimes(3);
+    });
+  });
 });

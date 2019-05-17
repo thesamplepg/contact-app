@@ -39,4 +39,24 @@ describe("RenderForm component", () => {
 
     expect(nameInput.hasClass("error")).toBeTruthy();
   });
+
+  describe("onChange handler", () => {
+    it("should call event when user entered smth", () => {
+      const changeHandler = jest.fn();
+
+      const nextProps = {
+        ...props,
+        changeHandler
+      };
+
+      const component = renderComponent(nextProps);
+      const inputs = component.find("input");
+
+      inputs.forEach(node =>
+        node.simulate("change", { target: { value: "asd" } })
+      );
+
+      expect(changeHandler).toHaveBeenCalledTimes(3);
+    });
+  });
 });

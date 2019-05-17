@@ -9,7 +9,6 @@ describe("RenderForm component", () => {
 
   const props = {
     errors: [],
-    contacts: [1, 2, 3],
     createContactAddress: mockCreateContact
   };
 
